@@ -10,7 +10,7 @@ class Book{
 interface ILibrary {
     addBook(book: Book): void;
     removeBook(id: string):void;
-    findBookById(id: string): Book  | undefined;
+    findBookById(id: string): Book ;
     listAllBooks(): Book[];
 }
 class Library implements ILibrary{
@@ -23,7 +23,7 @@ class Library implements ILibrary{
         this.books = this.books.filter(book => book.id !== id);
 
     }
-    findBookById(id: string):Book  | undefined{
+    findBookById(id: string):Book {
         return this.books.find(book => book.id == id);
     }
     listAllBooks(): Book[]{
